@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 320px;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.display-form {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.display-form input {
+    flex: 1;
+    padding: 12px;
+    font-size: 20px;
+    text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.equals {
+    padding: 12px 18px;
+    background: #28a745;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.equals:hover {
+    background: #218838;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Special Buttons */
+.clear {
+    background: #dc3545;
+}
+.clear:hover {
+    background: #c82333;
+}
+
+.backspace {
+    background: #ff9800;
+}
+.backspace:hover {
+    background: #e68900;
+}
+
+.zero {
+    grid-column: span 2;
+}

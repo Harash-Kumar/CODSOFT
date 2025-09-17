@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task History</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <h1>📜 Task History</h1>
+            <a href="{% url 'index' %}" class="back-btn">⬅ Back</a>
+
+            <form method="get" action="{% url 'history' %}">
+                <select name="filter" onchange="this.form.submit()">
+                    <option value="all" {% if filter_type == "all" %}selected{% endif %}>All</option>
+                    <option value="completed" {% if filter_type == "completed" %}selected{% endif %}>Completed</option>
+                    <option value="deleted" {% if filter_type == "deleted" %}selected{% endif %}>Deleted</option>
+                </select>
+            </form>
+        </div>
+
+        {% if filter_type == "all" or filter_type == "completed" %}
+        <h2>✅ Completed Tasks</h2>
+        <ul>
+            {% for task in completed %}
+                <li class="done">
+                    {{ task.text }}
+                    <small>— Completed on {{ task.updated_at|date:"M d, Y H:i" }}</small>
+                </li>
+            {% empty %}
+                <p>No completed tasks yet.</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if filter_type == "all" or filter_type == "deleted" %}
+        <h2>🗑 Deleted Tasks</h2>
+        <ul>
+            {% for task in deleted %}
+                <li class="deleted">
+                    {{ task.text }}
+                    <small>— Deleted on {{ task.updated_at|date:"M d, Y H:i" }}</small>
+                </li>
+            {% empty %}
+                <p>No deleted tasks yet.</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

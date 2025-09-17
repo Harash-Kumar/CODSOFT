@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 350px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form button {
+    padding: 15px 20px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+button[value="rock"] {
+    background: #ff5252;
+    color: white;
+}
+button[value="paper"] {
+    background: #2196f3;
+    color: white;
+}
+button[value="scissors"] {
+    background: #4caf50;
+    color: white;
+}
+
+.results {
+    margin-top: 20px;
+}

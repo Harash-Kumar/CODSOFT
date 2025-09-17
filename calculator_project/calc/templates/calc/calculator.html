@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Calculator</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 Django Calculator</h1>
+
+        <!-- Expression Input -->
+        <form method="post" class="display-form">
+            {% csrf_token %}
+            <input type="text" name="expression" value="{{ expression }}" placeholder="0" id="display">
+            <button type="submit" class="equals">=</button>
+        </form>
+
+        <!-- Show result -->
+        {% if result != "" %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+
+        <!-- Calculator Buttons -->
+        <div class="buttons">
+            <button type="button" onclick="clearInput()" class="clear">C</button>
+            <button type="button" onclick="backspace()" class="backspace">⌫</button>
+            <button type="button" onclick="addChar('/')">÷</button>
+            <button type="button" onclick="addChar('*')">×</button>
+
+            <button type="button" onclick="addChar('7')">7</button>
+            <button type="button" onclick="addChar('8')">8</button>
+            <button type="button" onclick="addChar('9')">9</button>
+            <button type="button" onclick="addChar('-')">−</button>
+
+            <button type="button" onclick="addChar('4')">4</button>
+            <button type="button" onclick="addChar('5')">5</button>
+            <button type="button" onclick="addChar('6')">6</button>
+            <button type="button" onclick="addChar('+')">+</button>
+
+            <button type="button" onclick="addChar('1')">1</button>
+            <button type="button" onclick="addChar('2')">2</button>
+            <button type="button" onclick="addChar('3')">3</button>
+            <button type="button" onclick="addChar('.')">.</button>
+
+            <button type="button" onclick="addChar('0')" class="zero">0</button>
+        </div>
+    </div>
+
+    <script>
+        function addChar(char) {
+            let input = document.getElementById("display");
+            input.value += char;
+        }
+        function clearInput() {
+            document.getElementById("display").value = "";
+        }
+        function backspace() {
+            let input = document.getElementById("display");
+            input.value = input.value.slice(0, -1);
+        }
+    </script>
+</body>
+</html>

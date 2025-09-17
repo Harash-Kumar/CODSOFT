@@ -1,0 +1,118 @@
+/* General Layout */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Add Task Form */
+.add-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.add-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.add-form button {
+    padding: 10px 15px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-form button:hover {
+    background: #45a049;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.task-list li.done span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Checkbox */
+.task-list li form {
+    margin: 0;
+}
+
+.task-list li input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Delete Button */
+.delete {
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #d9534f;
+    transition: 0.3s;
+}
+
+.delete:hover {
+    color: #c9302c;
+}
+
+/* History Button */
+.history-btn {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    background: #007BFF;
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.history-btn:hover {
+    background: #0056b3;
+}
